@@ -1,0 +1,45 @@
+:root { 
+    --bg-color: #FDC500;
+    --controllers-background: #003F88;
+    --grid-row: 16;
+    --grid-column: 16;
+}
+body { 
+    background-color: var(--bg-color);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.grid { 
+    width: 575px;
+    height: 575px;
+    display: grid;
+    grid-template-columns: repeat(var(--grid-column), 2fr);
+    grid-template-rows: repeat(var(--grid-row), 2fr);
+    border: 3px solid #FFF;
+    box-shadow: 15px 15px black;
+    margin-top: 30px;
+}
+
+.cell { 
+    background-color: #FFF;
+    border: 1px solid #000;;
+}
+
+.slider { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--controllers-background);
+    padding: 5px 10px 5px 10px;
+    border: 0px solid var(--controllers-background);
+    border-radius: 10px;
+}
+
+.slider-value { 
+    color: #FFF;
+    font-size: 20px;
+    margin-bottom: 3px;
+}
