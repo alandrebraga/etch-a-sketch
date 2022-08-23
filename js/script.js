@@ -1,5 +1,6 @@
 const grid = document.querySelector('.grid')
 const slider = document.querySelector('.slider-range')
+let rgb = false;
 
 let DEFAULT = 256
 function createCells(param) { 
@@ -16,17 +17,41 @@ function clearGrid(parent) {
     }
 }
 
+let blackButton = document.querySelector("#black");
+let rgbButton = document.querySelector("#rgb");
+
+blackButton.addEventListener('click', () => {
+    drawOnCanvas(cells, false)
+})
+
+rgbButton.addEventListener('click', (e) => {
+    drawOnCanvas(cells, true)
+})
+
+function generateRandomNumber() { 
+    return Math.floor(Math.random() * 255) + 1
+}
+
+function drawOnCanvas(cells, rgb) { 
+    if (!rgb) { 
+        cells.forEach(cell => cell.addEventListener('mouseover', e => {
+            cell.style.backgroundColor = "#000"
+        }));
+    } else {
+        cells.forEach(cell => cell.addEventListener('mouseover', e => {
+            let red = generateRandomNumber();
+            let green = generateRandomNumber();
+            let blue = generateRandomNumber();
+            cell.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
+        }));
+    }
+}
+
 createCells(DEFAULT)
 
-const cells = document.querySelectorAll('.cell')
-
-cells.forEach(cell => cell.addEventListener('mouseover', e => {
-    cell.style.backgroundColor = "#000"
-}));
-
+let cells = document.querySelectorAll('.cell')
 let values = document.querySelectorAll('.value');
 
-//change slider text
 slider.addEventListener('input', function() {
     let val = document.querySelector('.slider-range').value
     values.forEach(value => value.textContent = this.value)
@@ -34,8 +59,13 @@ slider.addEventListener('input', function() {
     grid.style.setProperty('--grid-row', val)
     grid.style.setProperty('--grid-column', val)
     createCells(val * val)
+    cells = document.querySelectorAll('.cell')
+    drawOnCanvas(cells, rgb)
 });
 
+function clearPainting() { 
+    cells.forEach(cell => cell.style.backgroundColor = "#FFF")
+}
 
 function changeGrid() { 
     let value = document.querySelector('.value')
@@ -43,3 +73,4 @@ function changeGrid() {
 }
 
 slider.addEventListener('input', changeGrid)
+drawOnCanvas(cells,rgb)

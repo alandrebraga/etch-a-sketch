@@ -4,6 +4,9 @@
     --grid-row: 16;
     --grid-column: 16;
 }
+* { 
+    font-family: 'Silkscreen', cursive;
+}
 body { 
     background-color: var(--bg-color);
     display: flex;
@@ -12,22 +15,44 @@ body {
     align-items: center;
     flex-direction: column;
 }
-.grid { 
-    width: 575px;
-    height: 575px;
-    display: grid;
-    grid-template-columns: repeat(var(--grid-column), 2fr);
-    grid-template-rows: repeat(var(--grid-row), 2fr);
-    border: 3px solid #FFF;
-    box-shadow: 15px 15px black;
-    margin-top: 30px;
+.controllers { 
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.cell { 
-    background-color: #FFF;
-    border: 1px solid #000;;
+.reset-btn button{ 
+    background-color: var(--controllers-background);
+    color: #FFF;
+    font-size: 22px;
+    border: 0px solid;
+    border-radius: 8px;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
 }
 
+.rgb-btn button{ 
+    background-color: var(--controllers-background);
+    color: #FFF;
+    font-size: 22px;
+    border: 0px solid;
+    border-radius: 8px;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.black-btn button { 
+    background-color: var(--controllers-background);
+    color: #FFF;
+    font-size: 22px;
+    border: 0px solid;
+    border-radius: 8px;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+}
 .slider { 
     display: flex;
     flex-direction: column;
@@ -42,4 +67,20 @@ body {
     color: #FFF;
     font-size: 20px;
     margin-bottom: 3px;
+}
+
+.grid { 
+    width: 575px;
+    height: 575px;
+    display: grid;
+    grid-template-columns: repeat(var(--grid-column), 2fr);
+    grid-template-rows: repeat(var(--grid-row), 2fr);
+    border: 3px solid #FFF;
+    box-shadow: 15px 15px black;
+    margin-top: 30px;
+}
+
+.cell { 
+    background-color: #FFF;
+    border: 1px solid #000;;
 }
