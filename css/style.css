@@ -1,13 +1,13 @@
-:root { 
+:root {
     --bg-color: #FDC500;
     --controllers-background: #003F88;
     --grid-row: 16;
     --grid-column: 16;
 }
-* { 
+* {
     font-family: 'Silkscreen', cursive;
 }
-body { 
+body {
     background-color: var(--bg-color);
     display: flex;
     height: 100vh;
@@ -15,13 +15,13 @@ body {
     align-items: center;
     flex-direction: column;
 }
-.controllers { 
+.controllers {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.reset-btn button{ 
+.reset-btn button{
     background-color: var(--controllers-background);
     color: #FFF;
     font-size: 22px;
@@ -32,7 +32,7 @@ body {
     cursor: pointer;
 }
 
-.rgb-btn button{ 
+.rgb-btn button{
     background-color: var(--controllers-background);
     color: #FFF;
     font-size: 22px;
@@ -43,7 +43,7 @@ body {
     cursor: pointer;
 }
 
-.black-btn button { 
+.black-btn button {
     background-color: var(--controllers-background);
     color: #FFF;
     font-size: 22px;
@@ -53,7 +53,21 @@ body {
     width: 150px;
     cursor: pointer;
 }
-.slider { 
+
+.color-picker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    height: 50px;
+    width: 100px;
+    background-color: var(--controllers-background);
+    color: white;
+    border-radius: 8px;
+}
+
+.slider {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,13 +77,13 @@ body {
     border-radius: 10px;
 }
 
-.slider-value { 
+.slider-value {
     color: #FFF;
     font-size: 20px;
     margin-bottom: 3px;
 }
 
-.grid { 
+.grid {
     width: 575px;
     height: 575px;
     display: grid;
@@ -80,7 +94,7 @@ body {
     margin-top: 30px;
 }
 
-.cell { 
+.cell {
     background-color: #FFF;
     border: 1px solid #000;;
 }

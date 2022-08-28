@@ -1,9 +1,18 @@
 const grid = document.querySelector('.grid')
 const slider = document.querySelector('.slider-range')
+let colorPicker = document.querySelector('#colorpicker');
+let paintColor = '#000000';
+
+colorPicker.addEventListener('input', () => {
+    color = document.querySelector('#colorpicker').value;
+    paintColor = color;
+});
+
 let rgb = false;
 
-let DEFAULT = 256
-function createCells(param) { 
+const DEFAULT = 256
+
+function createCells(param) {
     for(let i = 0; i < param; i++) {
         const div = document.createElement('div')
         div.classList.add('cell')
@@ -11,31 +20,20 @@ function createCells(param) {
     }
 }
 
-function clearGrid(parent) { 
+function clearGrid(parent) {
     while(parent.firstChild) {
         parent.removeChild(parent.firstChild)
     }
 }
 
-let blackButton = document.querySelector("#black");
-let rgbButton = document.querySelector("#rgb");
-
-blackButton.addEventListener('click', () => {
-    drawOnCanvas(cells, false)
-})
-
-rgbButton.addEventListener('click', (e) => {
-    drawOnCanvas(cells, true)
-})
-
-function generateRandomNumber() { 
+function generateRandomNumber() {
     return Math.floor(Math.random() * 255) + 1
 }
 
-function drawOnCanvas(cells, rgb) { 
-    if (!rgb) { 
+function drawOnCanvas(cells, rgb) {
+    if (!rgb) {
         cells.forEach(cell => cell.addEventListener('mouseover', e => {
-            cell.style.backgroundColor = "#000"
+            cell.style.backgroundColor = paintColor;
         }));
     } else {
         cells.forEach(cell => cell.addEventListener('mouseover', e => {
@@ -46,6 +44,26 @@ function drawOnCanvas(cells, rgb) {
         }));
     }
 }
+
+function clearPainting() {
+    cells.forEach(cell => cell.style.backgroundColor = "#FFF")
+}
+
+function changeGrid() {
+    let value = document.querySelector('.value')
+    grid.style.gridTemplateColumns = value.textContent;
+}
+
+const blackButton = document.querySelector("#black");
+const rgbButton = document.querySelector("#rgb");
+
+blackButton.addEventListener('click', () => {
+    drawOnCanvas(cells, false)
+})
+
+rgbButton.addEventListener('click', (e) => {
+    drawOnCanvas(cells, true)
+})
 
 createCells(DEFAULT)
 
@@ -62,15 +80,6 @@ slider.addEventListener('input', function() {
     cells = document.querySelectorAll('.cell')
     drawOnCanvas(cells, rgb)
 });
-
-function clearPainting() { 
-    cells.forEach(cell => cell.style.backgroundColor = "#FFF")
-}
-
-function changeGrid() { 
-    let value = document.querySelector('.value')
-    grid.style.gridTemplateColumns = value.textContent;
-}
 
 slider.addEventListener('input', changeGrid)
 drawOnCanvas(cells,rgb)
