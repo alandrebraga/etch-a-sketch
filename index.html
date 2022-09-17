@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>etch a sketch</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300&family=Silkscreen&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300&family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="controllers">
-        <div class="slider">
-            <p class="slider-value"><span class="value">16</span> x <span class="value">16</span></p>
-            <input class="slider-range" type="range" min="16" max="60" step="1">
-        </div>
-        <div class="reset-btn">
-            <button onclick="clearPainting()"> Reset </button>
-        </div>
-        <div class="rgb-btn">
-            <button id="rgb"> RGB </button>
-        </div>
-        <div class="black-btn">
-            <button id="black"> BLACK </button>
-        </div>
-        <div class="color-picker">
-            <input type="color" id="colorpicker" value="#000000">
-        </div>
+      <div class="slider">
+        <p class="slider-value">
+          <span class="value">16</span> x <span class="value">16</span>
+        </p>
+        <input class="slider-range" type="range" min="16" max="60" step="1" />
+      </div>
+      <div class="reset-btn">
+        <button onclick="clearPainting()">Reset</button>
+      </div>
+      <div class="rgb-btn">
+        <button id="rgb">RGB</button>
+      </div>
+      <div class="black-btn">
+        <button id="black">BLACK</button>
+      </div>
+      <div class="color-picker">
+        <input type="color" id="colorpicker" value="#000000" />
+      </div>
     </div>
-    <div class="grid">
-    </div>
-</body>
+    <div class="grid"></div>
+  </body>
 </html>
