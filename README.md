@@ -9,11 +9,11 @@ Este projeto esta em desenvolvimento e até o momento foi muito bacana pois pude
 <center>
 <h1>Tela Inicial</h1>
 
-<img src="image1.png" width="400px"/>
+<img src="demo/image1.png" width="400px"/>
 
 <h1>Desenho</h1>
 
-<img src="image2.png" width="400px"/>
+<img src="demo/image2.png" width="400px"/>
 
 <h1>Rgb mode</h1>
-<img src="rgb_mode.png" width="400px"/>
+<img src="demo/rgb_mode.png" width="400px"/>
