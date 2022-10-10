@@ -4,7 +4,7 @@ Evitei aprender front-end e o javascript por algum tempo, agora, estou no proces
 
 Este projeto é proposto no caminho de javascript no odin project, gosto de aprender com desafios pois me ajudam a fixar o conteudo.
 
-Este projeto esta em desenvolvimento e até o momento foi muito bacana pois pude entender melhor como funciona a manipulação do DOM com javascript puro.
+O desenvolvimento deste projeto foi ótimo, pois me ajudou a entender melhor como funciona a manipulação de DOM com javascript.
 
 <center>
 <h1>Tela Inicial</h1>
